@@ -10,9 +10,9 @@ public class Person {
     public static ArrayList<Person> personList = new ArrayList<>();
 
     public Person(String name, String nationalID) {
+        this.id = personList.size();
         this.name = name;
         this.nationalID = nationalID;
-        id = personList.size();
         personList.add(this);
     }
 
