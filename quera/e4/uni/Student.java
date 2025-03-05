@@ -15,13 +15,9 @@ public class Student {
     public Student(int personID, int entranceYear, int majorID) {
         this.id = studentList.size();
 
-        for (Major major : Major.majorList) {
-            if (major.id == majorID) {
-                major.addStudent();
-                this.personID = major.numberOfStudents;
-                break;
-            }
-        }
+        Major major = Major.findByID(majorID);
+        major.addStudent();
+        this.personID = major.numberOfStudents;
 
         this.entranceYear = entranceYear;
         this.majorID = majorID;
